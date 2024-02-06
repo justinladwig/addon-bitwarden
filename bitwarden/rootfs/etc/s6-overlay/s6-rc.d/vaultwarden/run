@@ -72,6 +72,24 @@ if bashio::config.has_value 'request_size_limit'; then
     export ROCKET_LIMITS="{json=${request_size_limit}}"
 fi
 
+# Mobile Client push notification
+if bashio::config.has_value 'push'; then
+    push_enabled=$(bashio::config 'push')
+    push_installation_id=$(bashio::config 'push_installation_id')
+    push_installation_key=$(bashio::config 'push_installation_key')
+    push_relay_uri=$(bashio::config 'push_relay_uri')
+    push_identity_uri=$(bashio::config 'push_identity_uri')
+    if [ "${push_enabled}" == "true" ]; then
+        export PUSH_ENABLED=true
+        export PUSH_INSTALLATION_ID="${push_installation_id}"
+        export PUSH_INSTALLATION_KEY="${push_installation_key}"
+        export PUSH_RELAY_URI="${push_relay_uri}"
+        export PUSH_IDENTITY_URI="${push_identity_uri}"
+    else
+        export PUSH_ENABLED=false
+    fi
+fi
+
 # Run the Bitwarden server
 bashio::log.info 'Starting the Vaultwarden server...'
 cd /opt || bashio::exit.nok

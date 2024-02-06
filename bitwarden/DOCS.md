@@ -102,6 +102,37 @@ especially if running with limited resources.
 
 To set the limit, you can use this setting: 10MB would be `10485760`.
 
+### Option: `push`
+
+Enables/Disables Mobile Client push notifications. You can activate Mobile
+Client push notifications to automatically sync your personal vault between
+the mobile app, the web extension and the web vault without the need to sync
+manually.
+
+### Option: `push_installation_id`
+
+The push installation id obtained from official Bitwarden website. Refer to
+[Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki/Enabling-Mobile-Client-push-notification)
+for information how to obtain this.
+
+### Option: `push_installation_key`
+
+The push installation key obtained from official Bitwarden website. Refer to
+[Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki/Enabling-Mobile-Client-push-notification)
+for information how to obtain this.
+
+## Option: `push_relay_uri`
+
+The URI to the Bitwarden relay server. Refer to
+[Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki/Enabling-Mobile-Client-push-notification)
+for more information.
+
+## Option: `push_identity_uri`
+
+The URI to the Bitwarden identity server. Refer to
+[Vaultwarden Wiki](https://github.com/dani-garcia/vaultwarden/wiki/Enabling-Mobile-Client-push-notification)
+for more information.
+
 ## Known issues and limitations
 
 - This add-on cannot support Ingress at this time due to technical limitations

@@ -21,9 +21,16 @@ options:
   ssl: true
   certfile: fullchain.pem
   keyfile: privkey.pem
+  push_relay_uri: https://push.bitwarden.com
+  push_identity_uri: https://push.bitwarden.com
 schema:
   log_level: list(trace|debug|info|notice|warning|error|fatal)?
   ssl: bool
   certfile: str
   keyfile: str
+  push: bool
+  push_installation_id: str?
+  push_installation_key: str?
+  push_relay_uri: url?
+  push_identity_uri: url?
   request_size_limit: int?
