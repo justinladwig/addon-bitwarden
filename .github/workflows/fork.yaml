@@ -11,3 +11,6 @@ jobs:
 
     steps:
       - uses: tgymnich/fork-sync@v1.9.0
+        with:
+          head: main
+          base: main
